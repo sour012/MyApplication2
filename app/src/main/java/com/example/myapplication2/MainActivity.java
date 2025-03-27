@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
                     DecimalFormat df = new DecimalFormat("0.00");
                     String bmiStr = df.format(bmi);
-
+// jikkkk
+                    //piiii
 
                 }
             }
