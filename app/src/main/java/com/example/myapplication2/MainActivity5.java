@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity5 extends AppCompatActivity {
-private static final string TAG ="Rate";
+
 TextView show;
 private float dollarRate=0.1f;
 private float euroRate=0.05f;
