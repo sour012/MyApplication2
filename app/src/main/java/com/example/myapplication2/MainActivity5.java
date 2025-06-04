@@ -53,7 +53,6 @@ private float wonrRate=500f;
         Intent config = new Intent(this,ConfigActivity.class);
         config.putExtra("dollar_rate_key",dollarRate);
         config.putExtra("euro_rate_key",euroRate);
-        config.putExtra("wonr_rate_key",wonrRate);
 
    startActivity(config);
     }
