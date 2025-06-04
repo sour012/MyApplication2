@@ -1,12 +1,14 @@
 package com.example.myapplication2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication2.R;
 
@@ -44,11 +46,43 @@ public class MainActivity extends AppCompatActivity {
 
                     DecimalFormat df = new DecimalFormat("0.00");
                     String bmiStr = df.format(bmi);
-// jikkkk
-                    //piiii
+
 
                 }
             }
         });
+    }
+}
+public class RateListActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rate_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        new FetchDataTask().execute("https://www.huilvbiao.com/bank/spdb");
+    }
+
+    private class FetchDataTask extends AsyncTask<String, Void, List<CurrencyRate>> {
+        @Override
+        protected List<CurrencyRate> doInBackground(String... urls) {
+            try {
+                Document doc = Jsoup.connect(urls[0]).get();
+                return WebParser.parse(doc.html());
+            } catch (Exception e) {
+
+            }
+        }
+
+        @Override
+        protected void onPostExecute(List<CurrencyRate> rates) {
+            if (rates != null) {
+                // 更新RecyclerView
+                CurrencyAdapter adapter = new CurrencyAdapter(rates);
+                recyclerView.setAdapter(adapter);
+            }
+        }
     }
 }

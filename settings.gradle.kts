@@ -17,6 +17,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        create("pp") {
+            from(files("gradle/pp.versions.toml"))
+        }
+    }
 }
 
 rootProject.name = "My Application2"

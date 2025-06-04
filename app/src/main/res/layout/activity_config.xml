@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="美元汇率 (1美元 = ? 人民币)"/>
+    <EditText
+        android:id="@+id/ed_dollar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <!-- 欧元汇率输入框 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="欧元汇率 (1欧元 = ? 人民币)"
+        android:layout_marginTop="16dp"/>
+    <EditText
+        android:id="@+id/ed_euro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <!-- 韩元汇率输入框 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="韩元汇率 (1人民币 = ? 韩元)"
+        android:layout_marginTop="16dp"/>
+    <EditText
+        android:id="@+id/ed_won"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <!-- 保存按钮 -->
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:layout_marginTop="24dp"
+        android:onClick="onSaveClick"/>
+
+</LinearLayout>
